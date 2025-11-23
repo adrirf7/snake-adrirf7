@@ -21,12 +21,22 @@
         <button id="start">Start</button>
       </div>
       <div id="gameOver">Game Over</div>
-      <select id="sizeSelector">
-        <option value="10" disabled>---Set Board Size---</option>
-        <option value="10" selected>Small</option>
-        <option value="20">Medium</option>
-        <option value="30">Big</option>
-      </select>
+      <div class="settings-row">
+        <select id="sizeSelector">
+          <option value="10" disabled>---Set Board Size---</option>
+          <option value="10" selected>Small</option>
+          <option value="20">Medium</option>
+          <option value="30">Big</option>
+        </select>
+        <select id="themeSelector">
+          <option value="dark" selected>Dark Mode</option>
+          <option value="light">Light Mode</option>
+        </select>
+        <select id="soundSelector">
+          <option value="on" selected>Sound On</option>
+          <option value="off">Sound Off</option>
+        </select>
+      </div>
 
       <!-- Controles táctiles para móvil -->
       <div class="mobile-controls">

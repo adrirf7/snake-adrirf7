@@ -5,7 +5,9 @@ export const board = document.querySelector("#board"),
   scoreBoard = document.querySelector("#scoreBoard"),
   startButton = document.querySelector("#start"),
   gameOverSign = document.querySelector("#gameOver"),
-  sizeSelector = document.querySelector("#sizeSelector");
+  sizeSelector = document.querySelector("#sizeSelector"),
+  themeSelector = document.querySelector("#themeSelector"),
+  soundSelector = document.querySelector("#soundSelector");
 
 // Botones de control táctil
 const btnUp = document.querySelector("#btnUp"),
@@ -16,6 +18,9 @@ const btnUp = document.querySelector("#btnUp"),
 //Audio para comer
 const eatSounds = new Audio("assets/audio/570636__bsp7176__food.mp3");
 eatSounds.volume = 0.5;
+
+// Variables de configuración
+let isSoundMuted = false;
 
 //Game Settings
 const gameSpeed = 100; //Velocidad del juego
@@ -38,6 +43,20 @@ export let snake, //Array de los valores que ocupa la serpiente
 const setDirection = (newDirection) => {
   direction = newDirection;
 };
+
+// Event listener para cambio de tema
+themeSelector.addEventListener("change", (e) => {
+  if (e.target.value === "light") {
+    document.body.classList.add("light-mode");
+  } else {
+    document.body.classList.remove("light-mode");
+  }
+});
+
+// Event listener para mutear sonido
+soundSelector.addEventListener("change", (e) => {
+  isSoundMuted = e.target.value === "off";
+});
 
 // Función para manejar los controles táctiles
 const handleTouchControl = (newDirection) => {
@@ -97,11 +116,13 @@ const startGame = () => {
         score++;
         updateScore(scoreBoard, score);
         createRandomFood(emptySquares, (square, type) => drawSquare(square, type, boardSquares, squareTypes, emptySquares));
-        addFood(
-          eatSounds,
-          () => {},
-          () => {}
-        );
+        if (!isSoundMuted) {
+          addFood(
+            eatSounds,
+            () => {},
+            () => {}
+          );
+        }
       },
       (square, type) => drawSquare(square, type, boardSquares, squareTypes, emptySquares),
       (snakeArr, drawSquareFn) => drawSnake(snakeArr, drawSquareFn)
