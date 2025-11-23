@@ -1,0 +1,11 @@
+export { createBoard, setBoardSize } from "./create-board";
+export { setGame } from "./set-game";
+export { drawSquare } from "./draw-square";
+export { createRandomFood } from "./create-random-food";
+export { drawSnake } from "./draw-snake";
+export { moveSnake } from "./move-snake";
+export { addFood } from "./add-food";
+export { gameOver } from "./game-over";
+export { directionEvent } from "./direction-event";
+export { updateScore } from "./update-score";
+export { startGame } from "./start-game";
