@@ -21,8 +21,8 @@ body.light-mode {
 .container {
   width: 100%;
   max-width: 500px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 15px;
 }
 
@@ -37,6 +37,7 @@ body.light-mode {
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   transition: border-color 0.3s ease;
+  order: 1;
 }
 
 body.light-mode #board {
@@ -56,6 +57,7 @@ body.light-mode #board {
   border-radius: 8px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  order: 3;
 }
 
 body.light-mode .boardInfo {
@@ -166,6 +168,7 @@ body.light-mode #sizeSelector:hover:not(:disabled) {
   gap: 10px;
   width: 100%;
   flex-wrap: wrap;
+  order: 4;
 }
 
 .settings-row select {
@@ -230,11 +233,12 @@ body.light-mode #soundSelector:hover {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 0;
   padding: 20px;
   background: rgba(26, 32, 44, 0.7);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  order: 2;
 }
 
 body.light-mode .mobile-controls {
