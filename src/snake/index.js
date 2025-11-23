@@ -7,6 +7,12 @@ export const board = document.querySelector("#board"),
   gameOverSign = document.querySelector("#gameOver"),
   sizeSelector = document.querySelector("#sizeSelector");
 
+// Botones de control táctil
+const btnUp = document.querySelector("#btnUp"),
+  btnDown = document.querySelector("#btnDown"),
+  btnLeft = document.querySelector("#btnLeft"),
+  btnRight = document.querySelector("#btnRight");
+
 const eatSounds = [
   new Audio("assets/audio/c6-102822.mp3"),
   new Audio("assets/audio/d6-82020.mp3"),
@@ -35,6 +41,27 @@ export let snake, //Array de los valores que ocupa la serpiente
 const setDirection = (newDirection) => {
   direction = newDirection;
 };
+
+// Función para manejar los controles táctiles
+const handleTouchControl = (newDirection) => {
+  const opposites = {
+    'ArrowUp': 'ArrowDown',
+    'ArrowDown': 'ArrowUp',
+    'ArrowLeft': 'ArrowRight',
+    'ArrowRight': 'ArrowLeft'
+  };
+  
+  // Evitar que la serpiente vaya en dirección opuesta
+  if (direction !== opposites[newDirection]) {
+    setDirection(newDirection);
+  }
+};
+
+// Event listeners para los botones táctiles
+if (btnUp) btnUp.addEventListener('click', () => handleTouchControl('ArrowUp'));
+if (btnDown) btnDown.addEventListener('click', () => handleTouchControl('ArrowDown'));
+if (btnLeft) btnLeft.addEventListener('click', () => handleTouchControl('ArrowLeft'));
+if (btnRight) btnRight.addEventListener('click', () => handleTouchControl('ArrowRight'));
 
 const startGame = () => {
   //Extraer el valor del tamaño del tablero e introducirlo como argumento en la funcion
