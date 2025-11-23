@@ -45,12 +45,12 @@ const setDirection = (newDirection) => {
 // Función para manejar los controles táctiles
 const handleTouchControl = (newDirection) => {
   const opposites = {
-    'ArrowUp': 'ArrowDown',
-    'ArrowDown': 'ArrowUp',
-    'ArrowLeft': 'ArrowRight',
-    'ArrowRight': 'ArrowLeft'
+    ArrowUp: "ArrowDown",
+    ArrowDown: "ArrowUp",
+    ArrowLeft: "ArrowRight",
+    ArrowRight: "ArrowLeft",
   };
-  
+
   // Evitar que la serpiente vaya en dirección opuesta
   if (direction !== opposites[newDirection]) {
     setDirection(newDirection);
@@ -58,10 +58,10 @@ const handleTouchControl = (newDirection) => {
 };
 
 // Event listeners para los botones táctiles
-if (btnUp) btnUp.addEventListener('click', () => handleTouchControl('ArrowUp'));
-if (btnDown) btnDown.addEventListener('click', () => handleTouchControl('ArrowDown'));
-if (btnLeft) btnLeft.addEventListener('click', () => handleTouchControl('ArrowLeft'));
-if (btnRight) btnRight.addEventListener('click', () => handleTouchControl('ArrowRight'));
+if (btnUp) btnUp.addEventListener("click", () => handleTouchControl("ArrowUp"));
+if (btnDown) btnDown.addEventListener("click", () => handleTouchControl("ArrowDown"));
+if (btnLeft) btnLeft.addEventListener("click", () => handleTouchControl("ArrowLeft"));
+if (btnRight) btnRight.addEventListener("click", () => handleTouchControl("ArrowRight"));
 
 const startGame = () => {
   //Extraer el valor del tamaño del tablero e introducirlo como argumento en la funcion
