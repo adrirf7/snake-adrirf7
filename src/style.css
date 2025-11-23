@@ -147,23 +147,27 @@ body {
 /* Controles táctiles para móvil */
 .mobile-controls {
   display: none;
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 20px auto 0;
-  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(22, 33, 62, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .control-row {
-  display: contents;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 .control-btn {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  background: linear-gradient(135deg, #345d83 0%, #292863 100%);
+  width: 70px;
+  height: 70px;
+  font-size: 28px;
+  background: linear-gradient(135deg, #533483 0%, #3d2863 100%);
   color: #00d4ff;
   border: 2px solid #00d4ff;
   border-radius: 12px;
@@ -177,32 +181,7 @@ body {
 .control-btn:active {
   transform: scale(0.95);
   box-shadow: 0 2px 10px rgba(0, 212, 255, 0.5);
-  background: linear-gradient(135deg, #4a789e 0%, #346a83 100%);
-}
-
-/* Posición en cruz de los botones */
-#btnUp {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#btnLeft {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-#btnRight {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-#btnDown {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  background: linear-gradient(135deg, #6a4a9e 0%, #533483 100%);
 }
 
 /* Media Queries para Responsive */
@@ -216,7 +195,13 @@ body {
   }
 
   .mobile-controls {
-    display: block;
+    display: flex;
+  }
+
+  .control-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
 }
 
@@ -231,15 +216,10 @@ body {
     width: 100%;
   }
 
-  .mobile-controls {
-    width: 170px;
-    height: 170px;
-  }
-
   .control-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
   }
 }
 

@@ -13,12 +13,9 @@ const btnUp = document.querySelector("#btnUp"),
   btnLeft = document.querySelector("#btnLeft"),
   btnRight = document.querySelector("#btnRight");
 
-const eatSounds = [
-  new Audio("assets/audio/c6-102822.mp3"),
-  new Audio("assets/audio/d6-82020.mp3"),
-  new Audio("assets/audio/f6-102819.mp3"),
-  new Audio("assets/audio/g6-82013.mp3"),
-];
+//Audio para comer
+const eatSounds = new Audio("assets/audio/570636__bsp7176__food.mp3");
+eatSounds.volume = 0.5;
 
 //Game Settings
 const gameSpeed = 100; //Velocidad del juego
