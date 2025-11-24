@@ -287,12 +287,13 @@ body.light-mode .control-btn:active {
 /* Media Queries para Responsive */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
-    max-height: 100vh;
+    padding: 10px 10px;
+    align-items: flex-start;
   }
 
   .container {
-    gap: 10px;
+    gap: 8px;
+    margin-top: 10px;
   }
 
   .mobile-controls {
@@ -307,6 +308,15 @@ body.light-mode .control-btn:active {
 }
 
 @media (max-width: 495px) {
+  body {
+    padding: 8px 10px;
+  }
+
+  .container {
+    gap: 6px;
+    margin-top: 5px;
+  }
+
   .control-btn {
     width: 55px;
     height: 55px;
@@ -315,6 +325,10 @@ body.light-mode .control-btn:active {
 
   .settings-row select {
     min-width: 100px;
+  }
+
+  .mobile-controls {
+    padding: 15px;
   }
 }
 
