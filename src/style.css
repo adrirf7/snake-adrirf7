@@ -307,6 +307,9 @@ body.light-mode .control-btn:active {
 }
 
 @media (max-width: 480px) {
+  body {
+    max-height: 100vh;
+  }
   .boardInfo {
     flex-direction: column;
     gap: 10px;
