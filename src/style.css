@@ -6,12 +6,14 @@
 body {
   margin: 0;
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #1a1d29 0%, #0f1419 50%, #000000 100%);
   padding: 20px;
   transition: background 0.3s ease;
+  overflow: hidden;
 }
 
 body.light-mode {
@@ -21,9 +23,12 @@ body.light-mode {
 .container {
   width: 100%;
   max-width: 500px;
+  max-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #board {
@@ -288,11 +293,13 @@ body.light-mode .control-btn:active {
 @media (max-width: 768px) {
   body {
     padding: 10px;
-    max-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .container {
     gap: 10px;
+    max-height: calc(100vh - 20px);
   }
 
   .mobile-controls {
@@ -308,8 +315,15 @@ body.light-mode .control-btn:active {
 
 @media (max-width: 480px) {
   body {
-    max-height: 100vh;
+    padding: 10px;
+    height: 100vh;
+    overflow: hidden;
   }
+
+  .container {
+    max-height: calc(100vh - 20px);
+  }
+
   .boardInfo {
     flex-direction: column;
     gap: 10px;
