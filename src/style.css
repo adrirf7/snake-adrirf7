@@ -306,24 +306,15 @@ body.light-mode .control-btn:active {
   }
 }
 
-@media (max-width: 480px) {
-  body {
-    max-height: 100vh;
-  }
-  .boardInfo {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  #start {
-    width: 100%;
-  }
-
+@media (max-width: 495px) {
   .control-btn {
     width: 55px;
     height: 55px;
     font-size: 22px;
+  }
+
+  .settings-row select {
+    min-width: 100px;
   }
 }
 
