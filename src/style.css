@@ -289,11 +289,15 @@ body.light-mode .control-btn:active {
   body {
     padding: 10px 10px;
     align-items: flex-start;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .container {
     gap: 8px;
     margin-top: 10px;
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
   }
 
   .mobile-controls {
@@ -310,11 +314,14 @@ body.light-mode .control-btn:active {
 @media (max-width: 495px) {
   body {
     padding: 8px 10px;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .container {
     gap: 6px;
     margin-top: 5px;
+    max-height: calc(100vh - 16px);
   }
 
   .control-btn {
