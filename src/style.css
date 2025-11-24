@@ -325,13 +325,8 @@ body.light-mode .control-btn:active {
   }
 
   .boardInfo {
-    flex-direction: column;
     gap: 10px;
     text-align: center;
-  }
-
-  #start {
-    width: 100%;
   }
 
   .control-btn {
