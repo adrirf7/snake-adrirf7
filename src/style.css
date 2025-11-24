@@ -288,6 +288,7 @@ body.light-mode .control-btn:active {
 @media (max-width: 768px) {
   body {
     padding: 10px;
+    max-height: 100vh;
   }
 
   .container {
