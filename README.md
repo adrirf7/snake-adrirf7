@@ -73,7 +73,7 @@ npm run preview
 - ✅ Dispositivos móviles iOS/Android
 - ✅ Tablets y pantallas táctiles
 
-## 🎓 Conocimientos Demostrados
+## 🎓 Conocimientos Adquiridos
 
 **JavaScript:** Manipulación DOM, ES6+ (módulos, arrow functions, destructuring), event handling, asincronía (setInterval), estructuras de datos
 
