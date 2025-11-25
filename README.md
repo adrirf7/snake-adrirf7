@@ -1,134 +1,49 @@
 # 🐍 Snake Game - Proyecto Portfolio
 
-> Aplicación web interactiva del clásico juego Snake, desarrollada con JavaScript moderno y arquitectura modular. Proyecto enfocado en demostrar habilidades de desarrollo frontend, clean code y buenas prácticas de programación.
+> Recreación moderna del clásico Snake con JavaScript ES6+, arquitectura modular y responsive design. Demuestra habilidades en desarrollo frontend, clean code y gestión de estado.
 
-## 📖 Descripción del Proyecto
+## 📖 Sobre el Proyecto
 
-Este proyecto es una recreación moderna del icónico juego Snake, implementado como Single Page Application (SPA) utilizando JavaScript vanilla y herramientas de desarrollo modernas. La aplicación demuestra capacidades técnicas en manipulación del DOM, manejo de eventos, renderizado en canvas, arquitectura modular y responsive design.
-
-El juego incluye múltiples opciones de configuración, controles táctiles para dispositivos móviles, sistema de puntuación en tiempo real, y una interfaz de usuario pulida con temas visuales personalizables.
-
-## 🎯 Objetivo del Proyecto
-
-Demostrar competencias técnicas en:
-
-- Desarrollo de aplicaciones interactivas con JavaScript ES6+
-- Arquitectura de código modular y escalable
-- Implementación de lógica de juegos y algoritmos
-- Diseño responsive y experiencia de usuario
-- Gestión de estado y eventos en tiempo real
-- Optimización de rendimiento en aplicaciones frontend
+SPA desarrollada con JavaScript vanilla que implementa el juego Snake con controles táctiles para móviles, múltiples tamaños de tablero, sistema de puntuación en tiempo real y temas personalizables (modo oscuro/claro).
 
 ## 🛠️ Stack Tecnológico
 
-### Core
+- **JavaScript ES6+** (Módulos, arrow functions, destructuring)
+- **HTML5** + **CSS3** (Flexbox, Grid, animaciones)
+- **Vite** (Build tool con HMR)
+- **Bootstrap 5** (Framework responsive)
+- **Web APIs** (Audio, Canvas, DOM Events)
 
-- **JavaScript ES6+**: Módulos, destructuring, arrow functions, clases
-- **HTML5**: Estructura semántica y canvas para renderizado
-- **CSS3**: Flexbox, Grid, animaciones, variables CSS, media queries
+## ⚙️ Funcionalidades Principales
 
-### Herramientas de Desarrollo
+**Mecánicas:** Movimiento fluido, detección de colisiones, generación aleatoria de comida, sistema de puntuación, game loop optimizado
 
-- **Vite**: Build tool moderno con HMR (Hot Module Replacement)
-- **npm**: Gestión de dependencias y scripts
-- **Bootstrap 5**: Framework CSS para componentes responsive
-
-### Características Técnicas
-
-- **Module System**: Arquitectura basada en ES Modules
-- **Web APIs**: Audio API, Canvas API, DOM manipulation
-- **Event Handling**: Keyboard events, touch events, change events
-
-## ⚙️ Funcionalidades Implementadas
-
-### Mecánicas del Juego
-
-- ✅ **Movimiento fluido de la serpiente** con sistema de grid
-- ✅ **Detección de colisiones** con paredes y el propio cuerpo
-- ✅ **Sistema de generación aleatoria** de comida
-- ✅ **Crecimiento progresivo** de la serpiente
-- ✅ **Sistema de puntuación** en tiempo real
-- ✅ **Game loop optimizado** con intervalos controlados
-
-### Interfaz de Usuario
-
-- ✅ **Responsive design** adaptable a móviles, tablets y desktop
-- ✅ **Controles de teclado** (flechas direccionales)
-- ✅ **Controles táctiles** para dispositivos móviles
-- ✅ **Temas visuales**: Modo oscuro y claro
-- ✅ **Selector de tamaño** del tablero (10x10, 20x20, 30x30)
-- ✅ **Control de audio** con opción de silenciar
-
-### Experiencia de Usuario
-
-- ✅ **Feedback visual** inmediato
-- ✅ **Efectos de sonido** al comer comida
-- ✅ **Pantalla de Game Over** con opciones de reinicio
-- ✅ **Deshabilitación de controles** durante el juego
-- ✅ **Transiciones suaves** entre estados
+**UI/UX:** Responsive design (móvil/tablet/desktop), controles de teclado y táctiles, 3 tamaños de tablero (10x10, 20x20, 30x30), temas claro/oscuro, efectos de sonido
 
 ## 🏗️ Arquitectura y Metodología
 
-### Patrón de Arquitectura
-
-El proyecto implementa una **arquitectura modular** basada en el patrón de **separación de responsabilidades**:
+**Arquitectura modular** con separación de responsabilidades:
 
 ```
-src/
-├── snake/
-│   ├── index.js              # Controlador principal y gestión de eventos
-│   └── usecases/             # Casos de uso (lógica de negocio)
-│       ├── create-board.js   # Generación del tablero visual
-│       ├── set-game.js       # Inicialización del estado del juego
-│       ├── move-snake.js     # Lógica de movimiento
-│       ├── draw-snake.js     # Renderizado de la serpiente
-│       ├── add-food.js       # Gestión de comida
-│       ├── game-over.js      # Lógica de fin de juego
-│       └── ...               # Otros módulos especializados
+src/snake/
+├── index.js              # Controlador y gestión de eventos
+└── usecases/             # Lógica de negocio modularizada
+    ├── create-board.js   # Generación del tablero
+    ├── move-snake.js     # Lógica de movimiento
+    ├── game-over.js      # Fin de juego
+    └── ...               # 11 módulos especializados
 ```
 
-### Principios Aplicados
+**Principios aplicados:** Single Responsibility, DRY, Separation of Concerns, Clean Code
 
-- **Single Responsibility Principle**: Cada módulo tiene una única responsabilidad
-- **DRY (Don't Repeat Yourself)**: Funciones reutilizables y código modular
-- **Separation of Concerns**: Separación clara entre lógica, presentación y datos
-- **Clean Code**: Nombres descriptivos, funciones pequeñas, código autodocumentado
+**Proceso:** Planificación → Setup (Vite) → Desarrollo iterativo → Testing → Optimización → Responsive
 
-### Proceso de Desarrollo
+## 💻 Características Técnicas
 
-1. **Planificación**: Definición de requisitos y estructura modular
-2. **Setup del proyecto**: Configuración de Vite y entorno de desarrollo
-3. **Desarrollo iterativo**: Implementación de funcionalidades por módulos
-4. **Testing manual**: Verificación de mecánicas y UX
-5. **Refinamiento**: Optimización de rendimiento y mejoras visuales
-6. **Responsive design**: Adaptación para múltiples dispositivos
-
-## 💻 Características Técnicas Destacadas
-
-### Gestión de Estado
-
-```javascript
-// Estado global del juego gestionado de forma eficiente
-let snake, score, direction, boardSquares, emptySquares, moveInterval;
-```
-
-### Sistema de Colisiones
-
-- Detección de bordes del tablero
-- Detección de auto-colisión con el cuerpo de la serpiente
-- Detección de comida con actualización de puntuación
-
-### Renderizado Optimizado
-
-- Grid CSS para representación del tablero
-- Actualización selectiva de casillas modificadas
-- Clases CSS dinámicas para estados visuales
-
-### Event Handling Robusto
-
-- Prevención de movimientos inversos inválidos
-- Debouncing implícito en el game loop
-- Soporte multi-input (teclado + touch)
+- **Gestión de estado:** Variables globales eficientes (snake, score, direction, boardSquares)
+- **Sistema de colisiones:** Detección de bordes y auto-colisión
+- **Renderizado:** Grid CSS con actualización selectiva de casillas
+- **Event handling:** Prevención de movimientos inválidos, soporte multi-input
 
 ## 🚀 Instalación y Ejecución
 
@@ -160,52 +75,16 @@ npm run preview
 
 ## 🎓 Conocimientos Demostrados
 
-### JavaScript
+**JavaScript:** Manipulación DOM, ES6+ (módulos, arrow functions, destructuring), event handling, asincronía (setInterval), estructuras de datos
 
-- Manipulación avanzada del DOM
-- Event handling y propagación
-- ES6+ (módulos, arrow functions, destructuring)
-- Asincronía y timing (setInterval/clearInterval)
-- Arrays y estructuras de datos
+**CSS:** Flexbox/Grid, responsive design, animaciones, variables CSS, temas dinámicos
 
-### CSS
-
-- Flexbox y CSS Grid
-- Responsive design con media queries
-- Animaciones y transiciones
-- Variables CSS personalizadas
-- Modo oscuro/claro
-
-### Desarrollo Web
-
-- Configuración de bundlers (Vite)
-- Estructura de proyectos escalables
-- Versionado con Git
-- Debugging y testing manual
-- Performance optimization
-
-## 📊 Métricas del Proyecto
-
-- **Líneas de código**: ~500+ líneas de JavaScript modular
-- **Módulos**: 11 módulos especializados
-- **Tiempo de desarrollo**: Proyecto completo funcional
-- **Responsive breakpoints**: Mobile, tablet, desktop
-- **Performance**: 60 FPS en renderizado
-
-## 🔄 Posibles Mejoras Futuras
-
-- [ ] Sistema de niveles con dificultad progresiva
-- [ ] Tabla de puntuaciones máximas (localStorage)
-- [ ] Power-ups y obstáculos especiales
-- [ ] Multijugador local
-- [ ] Tests unitarios con Jest/Vitest
-- [ ] Deployment automático con CI/CD
+**Desarrollo:** Vite bundler, arquitectura modular, Git, debugging, optimización de rendimiento
 
 ## 👨‍💻 Autor
 
-**Adrián RF**
-
-- GitHub: [@adrirf7](https://github.com/adrirf7)
-- Proyecto: [snake-adrirf7](https://github.com/adrirf7/snake-adrirf7)
+**Adrián RF** - [@adrirf7](https://github.com/adrirf7)
 
 ---
+
+💼 _Proyecto desarrollado para demostrar competencias en desarrollo frontend moderno_
